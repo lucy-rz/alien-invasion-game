@@ -19,6 +19,7 @@
  functions
 - use random to display a spaceship from a location of the grid
 - set a timer to display the random spaceship
+- play button functionality 
 
 
  event listeners
