@@ -8,6 +8,7 @@
 - grid: this will be the container of a predefined amount of spaceships.
 - points: if player correctly clicks on the displayed spaceship a point will be added to their marker.
 - timer: time will be initialized once the player cliks start and it will be displayed on the screen.
+- currently playing: set up to prevent multiple clicks once game has started
 
  cached elements
 - start button
@@ -25,6 +26,7 @@
 - clickedSpaceship function when the player hits an element in the grid and in the span time.
 - add points if player hits spaceship  
 - set a visible timer for the player
+- 
 
  event listeners
 - clicked grid section

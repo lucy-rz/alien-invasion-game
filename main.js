@@ -8,34 +8,49 @@ let spaceship;
 let grid;
 let points;
 let timer;
+let currentlyPlaying;
 
 
 // --- cached elements
 const startBtn = document.getElementById("startBtn");
-let playAgainBtn;
+const playAgainBtn = document.getElementById("playAgainBtn");
+
 
 // --- event listeners
 startBtn.addEventListener("click", startGame);
+
 // --- functions
 init()
 function init() {
     timer = 60;
     points = 0;
+    currentlyPlaying = false;
     render()
 }
 
-function startGame() {
+function startGame(evt) {
+    evt.preventDefault()
+    if(evt.target.tagName !== "DIV") {
+        return;
+    }
+    let i = parseInt(evt.target.id, 10)
+    if (currentlyPlaying === true) {
+        return;
+    }
+    currentlyPlaying = true;
     remainingTime()
 };
 
 function remainingTime() {
     timer--;
-    if(timer > 0) {
+    if (timer > 0) {
         setTimeout(remainingTime, 1000);
     } 
     console.log(timer);
     renderRemainingTime()
 }
+
+
 
 function renderPoints() {};
 
