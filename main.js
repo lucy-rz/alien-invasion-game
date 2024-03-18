@@ -44,7 +44,8 @@ function startGame(evt) {
         return;
     }
     currentlyPlaying = true;
-    remainingTime()
+    renderGrid();
+    remainingTime();
 };
 
 function remainingTime() {
@@ -70,13 +71,22 @@ function renderRemainingTime() {
 };
 
 function renderGrid () {
-    grid.forEach(function(gridValue, gridIdx){
-        const spaceshipEl = document.getElementById(gridIdx)
-        spaceshipEl.innerText = gridValue;
+    grid.forEach(function(gridValue, gridIdx) {
+        const gridEl = document.getElementById(gridIdx)
+        if (gridValue !== null) {
+            gridEl.innerText = gridValue;
+        } else {
+            gridEl.innerText = "Sp";
+        }
     })
         
     
 };
+
+function playAgain() {
+    init();
+    renderGrid();
+}
 
 function render() {
     renderRemainingTime();
