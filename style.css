@@ -45,11 +45,11 @@ h2 {
 
 }
 
-#time-display {
+.timer {
     text-align: left; 
 }
 
-#points-display {
+.points {
     text-align: right; 
 }
 
@@ -61,6 +61,7 @@ button {
     height: 5rem;
     width: 5rem;
     font-size: medium;
+    text-align: center;
 }
 
 button:hover {
