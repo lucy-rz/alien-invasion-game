@@ -19,6 +19,7 @@
  functions
 - use random to display a spaceship from a location of the grid
 - set a non-visible timer to display the random spaceship
+- start game that will call init to set up game
 - "start" button functionality to run game for the first time
 - "play again" button 
 - clickedSpaceship function when the player hits an element in the grid and in the span time.

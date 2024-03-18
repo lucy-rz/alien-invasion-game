@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #145DA0;
+    color: white; 
+    font-family: "Ojuju", sans-serif;
+    margin-top: 5rem;
+    
+}
+
+header{
+    font-size: xx-large;
+    text-align: center;
+}
+
+#player-name {
+    text-align: center;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(5, 10vmin);
+    grid-template-rows: repeat(2, 10vmin);
+    margin-top: 5vmin;
+    justify-content: center;
+    gap: 0.5vmin ;
+    
+}
+
+#grid > div {
+    border: 0.5vmin solid white;
+    text-align: center;
+    justify-content: flex-end;
+    padding-top: 20%;
+    font-size: x-large;
+}
+
+h2 {
+    color: white;
+
+}
+
+#time-display {
+    text-align: left; 
+}
+
+#points-display {
+    text-align: right; 
+}
+
+button {
+    margin-top: 5rem;
+    font-family: "Ojuju", sans-serif;
+    background: white;
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+    font-size: medium;
+}
+
+footer {
+    margin-top: 5rem;
+}
