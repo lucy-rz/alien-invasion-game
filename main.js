@@ -37,19 +37,28 @@ function startGame(evt) {
         return;
     }
     currentlyPlaying = true;
+    cleanGrid()
     remainingTime();
+};
+
+function cleanGrid() {
+
+    for (let i = 0; i < grid.length; i++) {
+        grid[i] = null
+    }
+    let randomIdx = Math.floor(Math.random() * grid.length);
+    grid[randomIdx] = "sp";
+    setTimeout(cleanGrid, 1000);
+    renderGrid()
 };
 
 function handleGridClick(evt) {
     let i = parseInt(evt.target.id, 10)
     if (grid[i] !== null) {
         return
-    } else {
-        let randomIdx = Math.floor(Math.random() * grid.length);
-        grid[randomIdx] = "sp"
     }
-    renderGrid()
 };
+
 
 function remainingTime() {
     timer--;
