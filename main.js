@@ -14,9 +14,11 @@ let currentlyPlaying;
 // --- cached elements
 const startBtn = document.getElementById("startBtn");
 const playAgainBtn = document.getElementById("playAgainBtn");
+const gridArea = document.getElementById("grid");
 
 // --- event listeners
 startBtn.addEventListener("click", startGame);
+gridArea.addEventListener("click", handleGridClick);
 
 // --- functions
 init()
@@ -31,21 +33,22 @@ function init() {
 
 function startGame(evt) {
     evt.preventDefault()
-    if(evt.target.tagName !== "DIV" && evt.target.tagName !== "BUTTON") {
-        return;
-    }
-    let i = parseInt(evt.target.id, 10)
-    if (grid[i] !== null) {
-        return
-    } else {
-        grid[i] = Math.floor(Math.random() * grid.length);
-    }
     if (currentlyPlaying === true) {
         return;
     }
     currentlyPlaying = true;
-    renderGrid();
     remainingTime();
+};
+
+function handleGridClick(evt) {
+    let i = parseInt(evt.target.id, 10)
+    if (grid[i] !== null) {
+        return
+    } else {
+        let randomIdx = Math.floor(Math.random() * grid.length);
+        grid[randomIdx] = "sp"
+    }
+    renderGrid()
 };
 
 function remainingTime() {
@@ -57,11 +60,18 @@ function remainingTime() {
     renderRemainingTime()
 }
 
-function countPoints() {
+function victory() {
+    //spaceship clicked in the spanned time
+};
 
-}
+// function countPoints() {
+//     if ( function victory () return === true) {
+//     points =+ 100 
+//     }
+// }
 
 function renderPoints() {};
+    //countPoints()
     const pointsEl = document.getElementById("points-display");
     pointsEl.innerText = points;
 
@@ -76,17 +86,17 @@ function renderGrid () {
         if (gridValue !== null) {
             gridEl.innerText = gridValue;
         } else {
-            gridEl.innerText = "Sp";
+            gridEl.innerText = "";
         }
     })
         
     
 };
 
-function playAgain() {
-    init();
-    renderGrid();
-}
+// function playAgain() {
+//     init();
+//     renderGrid();
+// }
 
 function render() {
     renderRemainingTime();

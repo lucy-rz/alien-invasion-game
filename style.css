@@ -61,7 +61,7 @@ button {
     height: 5rem;
     width: 5rem;
     font-size: medium;
-    text-align: center;
+    justify-content: center;
 }
 
 button:hover {
