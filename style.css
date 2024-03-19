@@ -9,7 +9,7 @@ body {
     color: white; 
     font-family: "Ojuju", sans-serif;
     margin-top: 5rem;
-    
+    text-align: center;
 }
 
 header{
@@ -24,8 +24,8 @@ header{
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(5, 10vmin);
-    grid-template-rows: repeat(2, 10vmin);
+    grid-template-columns: repeat(10, 10vmin);
+    grid-template-rows: repeat(5, 10vmin);
     margin-top: 5vmin;
     justify-content: center;
     gap: 0.5vmin ;
@@ -33,7 +33,7 @@ header{
 }
 
 #grid > div {
-    border: 0.5vmin solid white;
+    border: none;
     text-align: center;
     justify-content: flex-end;
     padding-top: 20%;

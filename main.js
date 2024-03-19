@@ -9,12 +9,14 @@ let grid;
 let points;
 let timer;
 let currentlyPlaying;
+let message;
 
 
 // --- cached elements
 const startBtn = document.getElementById("startBtn");
 const playAgainBtn = document.getElementById("playAgainBtn");
 const gridArea = document.getElementById("grid");
+const messageEl = document.getElementById("message");
 
 // --- event listeners
 startBtn.addEventListener("click", startGame);
@@ -23,11 +25,11 @@ gridArea.addEventListener("click", handleGridClick);
 // --- functions
 init()
 function init() {
-    timer = 60;
+    timer = 10;
     points = 0;
     grid = [null, null, null, null, null, null, null, null, null, null];
     currentlyPlaying = false;
-
+    message = ""
     render()
 }
 
@@ -60,6 +62,7 @@ function handleGridClick(evt) {
     let i = parseInt(evt.target.id, 10)
     if (grid[i] === "sp") {
         points += 100
+        grid[i] = null;
     } 
     console.log(points)
     render()
@@ -72,13 +75,23 @@ function remainingTime() {
         setTimeout(remainingTime, 1000);
     } 
     console.log(timer);
-    renderRemainingTime()
-}
+    if (timer === 0) {
+        message = "Game over!"
+        if (points >= 300) {
+            message = "You saved humanity!"
+        } 
+    }
+    render()
+};
 
+function renderMessage() {
+    messageEl.innerText = message;
+};
 
 function renderPoints() {
     const pointsEl = document.getElementById("points-display");
-    pointsEl.innerText = points};
+    pointsEl.innerText = points;
+};
     
 
 function renderRemainingTime() {
@@ -101,12 +114,13 @@ function renderGrid () {
 
 // function playAgain() {
 //     init();
-//     renderGrid();
+//     startGame() 
 // }
 
 function render() {
     renderRemainingTime();
     renderPoints();
     renderGrid()
+    renderMessage()
 }
 
