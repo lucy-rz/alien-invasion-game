@@ -45,18 +45,24 @@ function cleanGrid() {
 
     for (let i = 0; i < grid.length; i++) {
         grid[i] = null
+    } 
+    if (timer === 0) {
+        return
     }
     let randomIdx = Math.floor(Math.random() * grid.length);
     grid[randomIdx] = "sp";
     setTimeout(cleanGrid, 1000);
+    console.log(grid)
     renderGrid()
 };
 
 function handleGridClick(evt) {
     let i = parseInt(evt.target.id, 10)
-    if (grid[i] !== null) {
-        return
-    }
+    if (grid[i] === "sp") {
+        points += 100
+    } 
+    console.log(points)
+    render()
 };
 
 
@@ -69,20 +75,11 @@ function remainingTime() {
     renderRemainingTime()
 }
 
-function victory() {
-    //spaceship clicked in the spanned time
-};
 
-// function countPoints() {
-//     if ( function victory () return === true) {
-//     points =+ 100 
-//     }
-// }
-
-function renderPoints() {};
-    //countPoints()
+function renderPoints() {
     const pointsEl = document.getElementById("points-display");
-    pointsEl.innerText = points;
+    pointsEl.innerText = points};
+    
 
 function renderRemainingTime() {
     const timerEl = document.getElementById("time-display");
@@ -113,11 +110,3 @@ function render() {
     renderGrid()
 }
 
-/*
-function renderControls() {
-    playAgainBtn.style.visibility = winner ? "visible" : "hidden";
-    markerEls.forEach(function(markerEl, idx) {
-        const hideMarker = !board[idx].includes(null) || winner
-        markerEl.style.visibility = hideMarker ? "hidden" : "visible"
-    });
-} */
