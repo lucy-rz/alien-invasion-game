@@ -11,6 +11,7 @@ If the player achieves certain amount of points, they will be the saviour of the
 - CSS
 
 # Getting started
+https://lucy-rz.github.io/alien-invasion-game/
 
 # Future steps
 - Create levels based on time and points.
