@@ -21,13 +21,18 @@ const messageEl = document.getElementById("message");
 // --- event listeners
 startBtn.addEventListener("click", startGame);
 gridArea.addEventListener("click", handleGridClick);
+playAgainBtn.addEventListener("click", playAgain);
 
 // --- functions
 init()
 function init() {
-    timer = 10;
+    timer = 13;
     points = 0;
-    grid = [null, null, null, null, null, null, null, null, null, null];
+    grid = [null, null, null, null, null, null, null, null, null, null, 
+            null, null, null, null, null, null, null, null, null, null, 
+            null, null, null, null, null, null, null, null, null, null, 
+            null, null, null, null, null, null, null, null, null, null, 
+            null, null, null, null, null, null, null, null, null, null];
     currentlyPlaying = false;
     message = ""
     render()
@@ -49,11 +54,12 @@ function cleanGrid() {
         grid[i] = null
     } 
     if (timer === 0) {
+        renderGrid()
         return
     }
     let randomIdx = Math.floor(Math.random() * grid.length);
     grid[randomIdx] = "sp";
-    setTimeout(cleanGrid, 1000);
+    setTimeout(cleanGrid, 1300);
     console.log(grid)
     renderGrid()
 };
@@ -77,12 +83,19 @@ function remainingTime() {
     console.log(timer);
     if (timer === 0) {
         message = "Game over!"
-        if (points >= 300) {
+        if (points >= 700) {
             message = "You saved humanity!"
-        } 
+        } cleanGrid()
     }
     render()
 };
+
+function playAgain(evt) {
+    if (timer === 0){
+    init();
+    startGame(evt);
+    }
+}
 
 function renderMessage() {
     messageEl.innerText = message;
@@ -93,7 +106,6 @@ function renderPoints() {
     pointsEl.innerText = points;
 };
     
-
 function renderRemainingTime() {
     const timerEl = document.getElementById("time-display");
     timerEl.innerText = timer;
@@ -111,11 +123,6 @@ function renderGrid () {
         
     
 };
-
-// function playAgain() {
-//     init();
-//     startGame() 
-// }
 
 function render() {
     renderRemainingTime();
