@@ -38,8 +38,8 @@ header{
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(10, 5vmin);
+    grid-template-rows: repeat(5, 5vmin);
     margin-top: 5vmin;
     justify-content: center;
     gap: 0.5vmin ;
@@ -47,10 +47,10 @@ header{
 }
 
 #grid > div {
-    min-height: 53px;
+    min-height: 50px;
     text-align: center;
     justify-content: flex-end;
-    padding-top: 20%;
+    padding-top: 50%;
     font-size: x-large;
 }
 

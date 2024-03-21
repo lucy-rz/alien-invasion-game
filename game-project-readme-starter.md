@@ -1,9 +1,9 @@
 # Alien Invasion - Browser game
-Alien invasion is a game where the player must save humanity by clicking on the spaceships that will randomly appear in the screen during a couple of seconds. 
+Alien invasion is a game where the player must save humanity by clicking the spaceships with the tip of the laser gun, that will randomly appear on the screen during a couple of seconds. 
 If the player achieves certain amount of points, they will be the saviour of the planet; if not... Well, you can play again!
 
 # Screenshot
-
+![screenshot](wireframe/images/ai-game-screenshot.png)
 
 # Technologies used
 - JavaScript
@@ -11,7 +11,8 @@ If the player achieves certain amount of points, they will be the saviour of the
 - CSS
 
 # Getting started
-https://lucy-rz.github.io/alien-invasion-game/
+- https://lucy-rz.github.io/alien-invasion-game/
+- https://trello.com/b/U1IwBAFw/alien-invasion-game
 
 # Future steps
 - Create levels based on time and points.

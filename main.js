@@ -34,7 +34,7 @@ function init() {
             null, null, null, null, null, null, null, null, null, null, 
             null, null, null, null, null, null, null, null, null, null];
     currentlyPlaying = false;
-    message = ""
+    message = "Click the spaceship with the tip of the laser gun"
     render()
 };
 
@@ -44,6 +44,7 @@ function startGame(evt) {
         return;
     }
     currentlyPlaying = true;
+    message = ""
     cleanGrid()
     remainingTime()
 };
@@ -59,7 +60,6 @@ function cleanGrid() {
     let randomIdx = Math.floor(Math.random() * grid.length);
     grid[randomIdx] = "sp";
     setTimeout(cleanGrid, 1500);
-    console.log(grid)
     renderGrid()
 };
 
@@ -69,7 +69,6 @@ function handleGridClick(evt) {
         points += 100
         grid[i] = null;
     } 
-    console.log(points)
     render()
 };
 
@@ -78,7 +77,6 @@ function remainingTime() {
     if (timer > 0) {
         setTimeout(remainingTime, 1000);
     } 
-    console.log(timer);
     if (timer === 0) {
         message = "Game over!"
         if (points >= 500) {
