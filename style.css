@@ -10,6 +10,7 @@ body {
     font-family: "Ojuju", sans-serif;
     margin-top: 5rem;
     text-align: center;
+    
 }
 
 header{
@@ -20,6 +21,12 @@ header{
 
 #player-name {
     text-align: center;
+}
+
+.spaceship {
+    background-image: url('wireframe/images/spaceship.png');
+    width: 50px;
+    height: 50px;
 }
 
 #grid {
@@ -67,11 +74,16 @@ button {
 button:hover {
     cursor: pointer;
     background: greenyellow;
+    
 }
-
+/*
 div:hover {
     cursor: pointer;
 }
+*/
+.laser-gun {
+    cursor: url('wireframe/images/laser-gun.png') 45 10, auto;
+};
 
 footer {
     margin-top: 5rem;

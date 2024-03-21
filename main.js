@@ -59,7 +59,7 @@ function cleanGrid() {
     }
     let randomIdx = Math.floor(Math.random() * grid.length);
     grid[randomIdx] = "sp";
-    setTimeout(cleanGrid, 1300);
+    setTimeout(cleanGrid, 1500);
     console.log(grid)
     renderGrid()
 };
@@ -83,7 +83,7 @@ function remainingTime() {
     console.log(timer);
     if (timer === 0) {
         message = "Game over!"
-        if (points >= 700) {
+        if (points >= 800) {
             message = "You saved humanity!"
         } cleanGrid()
     }
@@ -115,9 +115,9 @@ function renderGrid () {
     grid.forEach(function(gridValue, gridIdx) {
         const gridEl = document.getElementById(gridIdx)
         if (gridValue !== null) {
-            gridEl.innerText = gridValue;
+            gridEl.classList.add("spaceship");
         } else {
-            gridEl.innerText = "";
+            gridEl.classList.remove("spaceship");
         }
     })
         
