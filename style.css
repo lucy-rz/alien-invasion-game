@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap");
 
+@media only screen and (max-width: 600px) {
+    #image-grid img {
+      width: 100%;
+    }
+  }
+
 * {
     box-sizing: border-box;
 }
@@ -14,8 +20,9 @@ body {
 }
 
 header{
-    font-size: 70px;
+    font-size: 60px;
     text-align: center;
+    
 }
 
 #message {
@@ -31,8 +38,8 @@ header{
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(10, 10vmin);
-    grid-template-rows: repeat(5, 10vmin);
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     margin-top: 5vmin;
     justify-content: center;
     gap: 0.5vmin ;
@@ -40,7 +47,7 @@ header{
 }
 
 #grid > div {
-    border: none;
+    min-height: 53px;
     text-align: center;
     justify-content: flex-end;
     padding-top: 20%;
@@ -50,6 +57,7 @@ header{
 h2 {
     color: white;
     font-weight: bold;
+    margin-bottom: 5vmin;
 }
 
 .timer {
@@ -67,19 +75,21 @@ h2 {
 button {
     margin-top: 5rem;
     font-family: "Ojuju", sans-serif;
-    background: white;
+    background: #FD7F20;
     border-radius: 50%;
     height: 5rem;
     width: 5rem;
-    font-size: medium;
+    font-size: 18px;
     justify-content: center;
     font-weight: bold;
+    border-color: orange;
+    color: white;
 }
 
 .lower-buttons {
     display: flex;
     justify-content: space-evenly;
-    padding: 8rem;
+    padding: 2rem;
 }
 
 .upper-display {

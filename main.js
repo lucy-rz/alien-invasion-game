@@ -36,7 +36,7 @@ function init() {
     currentlyPlaying = false;
     message = ""
     render()
-}
+};
 
 function startGame(evt) {
     evt.preventDefault()
@@ -45,11 +45,10 @@ function startGame(evt) {
     }
     currentlyPlaying = true;
     cleanGrid()
-    remainingTime();
+    remainingTime()
 };
 
 function cleanGrid() {
-
     for (let i = 0; i < grid.length; i++) {
         grid[i] = null
     } 
@@ -74,7 +73,6 @@ function handleGridClick(evt) {
     render()
 };
 
-
 function remainingTime() {
     timer--;
     if (timer > 0) {
@@ -83,7 +81,7 @@ function remainingTime() {
     console.log(timer);
     if (timer === 0) {
         message = "Game over!"
-        if (points >= 800) {
+        if (points >= 500) {
             message = "You saved humanity!"
         } cleanGrid()
     }
@@ -92,10 +90,10 @@ function remainingTime() {
 
 function playAgain(evt) {
     if (timer === 0){
-    init();
-    startGame(evt);
+    init()
+    startGame(evt)
     }
-}
+};
 
 function renderMessage() {
     messageEl.innerText = message;
@@ -125,9 +123,8 @@ function renderGrid () {
 };
 
 function render() {
-    renderRemainingTime();
-    renderPoints();
+    renderRemainingTime()
+    renderPoints()
     renderGrid()
     renderMessage()
-}
-
+};

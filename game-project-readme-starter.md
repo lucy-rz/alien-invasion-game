@@ -15,4 +15,5 @@ https://lucy-rz.github.io/alien-invasion-game/
 
 # Future steps
 - Create levels based on time and points.
-- Add more spaceship designs.
+- Add more spaceship models.
+- Create a pause button.
