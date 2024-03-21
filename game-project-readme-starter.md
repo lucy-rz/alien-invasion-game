@@ -3,7 +3,7 @@ Alien invasion is a game where the player must save humanity by clicking the spa
 If the player achieves certain amount of points, they will be the saviour of the planet; if not... Well, you can play again!
 
 # Screenshot
-![screenshot](wireframe/images/ai-game-screenshot.png)
+![screenshot](wireframe/images/game-screenshot.png)
 
 # Technologies used
 - JavaScript
