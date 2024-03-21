@@ -9,12 +9,14 @@
     </head>
     <body>
         <header id="header">ALIEN INVASION</header>
-        <div class="timer">
-            <p>Display time for player</p> <p id="time-display"> T </p>
-        </div>
-        <div class="points">
-            <p>Points</p> <p id="points-display"> P </p>
-        </div>
+        <section class="upper-display">
+            <div class="timer">
+                <p>Display time for player</p> <p id="time-display"> T </p>
+            </div>
+            <div class="points">
+                <p>Points</p> <p id="points-display"> P </p>
+            </div>
+        </section>
         <h2 id="message"></h2>
         <section id="grid" class="laser-gun">
             <div id="0"></div>
@@ -68,8 +70,11 @@
             <div id="48"></div>
             <div id="49"></div> 
         </section>
-        <button id="startBtn">Start</button>
-        <button id="playAgainBtn">Play again!</button>
+        <section class="lower-buttons">
+            <button id="playAgainBtn">Play again!</button>
+            <button id="startBtn">Start</button>
+        </section>
+        
         <footer id="footer">LUCY RUIZ. MARCH 2024. BROWSER GAME - PROJECT 1. MODEL-VIEW-CONTROLLER (MVC) ARCHITECTURAL PATTERN. JAVASCRRIPT, HTML, CSS.
         </footer>
     </body>

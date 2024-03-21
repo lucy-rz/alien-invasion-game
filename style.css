@@ -5,22 +5,22 @@
 }
 
 body {
-    background-color: #145DA0;
+    background-color: #81B622;
     color: white; 
     font-family: "Ojuju", sans-serif;
     margin-top: 5rem;
     text-align: center;
-    
-}
-
-header{
-    font-size: xx-large;
-    text-align: center;
     font-weight: bold;
 }
 
-#player-name {
+header{
+    font-size: 70px;
     text-align: center;
+}
+
+#message {
+    text-align: center;
+    font-size: 45px;
 }
 
 .spaceship {
@@ -49,15 +49,19 @@ header{
 
 h2 {
     color: white;
-
+    font-weight: bold;
 }
 
 .timer {
-    text-align: left; 
+    text-align: left;
+    color: white;
+    font-size: 30px;
 }
 
 .points {
     text-align: right; 
+    color: white;
+    font-size: 30px;
 }
 
 button {
@@ -69,18 +73,26 @@ button {
     width: 5rem;
     font-size: medium;
     justify-content: center;
+    font-weight: bold;
+}
+
+.lower-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 8rem;
+}
+
+.upper-display {
+    display: flex;
+    justify-content: space-around;
 }
 
 button:hover {
     cursor: pointer;
-    background: greenyellow;
+    background: #278ED5;
     
 }
-/*
-div:hover {
-    cursor: pointer;
-}
-*/
+
 .laser-gun {
     cursor: url('wireframe/images/laser-gun.png') 45 10, auto;
 };
