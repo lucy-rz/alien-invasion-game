@@ -1,6 +1,4 @@
-/* --- const
-audio
-*/
+const laserGunSound ='http://www.freesound.org/data/previews/42/42106_70164-lq.mp3';
 
 // --- state varibles
 let player;
@@ -17,6 +15,7 @@ const startBtn = document.getElementById("startBtn");
 const playAgainBtn = document.getElementById("playAgainBtn");
 const gridArea = document.getElementById("grid");
 const messageEl = document.getElementById("message");
+const sound = new Audio();
 
 // --- event listeners
 startBtn.addEventListener("click", startGame);
@@ -35,42 +34,45 @@ function init() {
             null, null, null, null, null, null, null, null, null, null];
     currentlyPlaying = false;
     message = "Click the spaceship with the tip of the laser gun"
+    sound.src = laserGunSound;
     render()
-};
+}
 
 function startGame(evt) {
-    evt.preventDefault()
+    evt.preventDefault();
     if (currentlyPlaying === true) {
         return;
     }
     currentlyPlaying = true;
-    message = ""
-    cleanGrid()
-    remainingTime()
-};
+    message = "";
+    cleanGrid();
+    remainingTime();
+}
 
 function cleanGrid() {
     for (let i = 0; i < grid.length; i++) {
-        grid[i] = null
+        grid[i] = null;
     } 
     if (timer === 0) {
-        renderGrid()
-        return
+        renderGrid();
+        return;
     }
     let randomIdx = Math.floor(Math.random() * grid.length);
     grid[randomIdx] = "sp";
     setTimeout(cleanGrid, 1500);
-    renderGrid()
-};
+    renderGrid();
+}
 
 function handleGridClick(evt) {
     let i = parseInt(evt.target.id, 10)
     if (grid[i] === "sp") {
-        points += 100
+        points += 100;
         grid[i] = null;
     } 
-    render()
-};
+    sound.currentTime = 0;
+    sound.play();
+    render();
+}
 
 function remainingTime() {
     timer--;
@@ -78,34 +80,34 @@ function remainingTime() {
         setTimeout(remainingTime, 1000);
     } 
     if (timer === 0) {
-        message = "Game over!"
+        message = "Game over!";
         if (points >= 500) {
-            message = "You saved humanity!"
-        } cleanGrid()
+            message = "You saved humanity!";
+        } cleanGrid();
     }
-    render()
-};
+    render();
+}
 
 function playAgain(evt) {
     if (timer === 0){
-    init()
-    startGame(evt)
+    init();
+    startGame(evt);
     }
-};
+}
 
 function renderMessage() {
     messageEl.innerText = message;
-};
+}
 
 function renderPoints() {
     const pointsEl = document.getElementById("points-display");
     pointsEl.innerText = points;
-};
+}
     
 function renderRemainingTime() {
     const timerEl = document.getElementById("time-display");
     timerEl.innerText = timer;
-};
+}
 
 function renderGrid () {
     grid.forEach(function(gridValue, gridIdx) {
@@ -118,11 +120,11 @@ function renderGrid () {
     })
         
     
-};
+}
 
 function render() {
-    renderRemainingTime()
-    renderPoints()
-    renderGrid()
-    renderMessage()
-};
+    renderRemainingTime();
+    renderPoints();
+    renderGrid();
+    renderMessage();
+}
