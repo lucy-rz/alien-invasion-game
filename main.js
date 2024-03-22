@@ -45,11 +45,11 @@ function startGame(evt) {
     }
     currentlyPlaying = true;
     message = "";
-    cleanGrid();
+    updateGrid();
     remainingTime();
 }
 
-function cleanGrid() {
+function updateGrid() {
     for (let i = 0; i < grid.length; i++) {
         grid[i] = null;
     } 
@@ -59,7 +59,7 @@ function cleanGrid() {
     }
     let randomIdx = Math.floor(Math.random() * grid.length);
     grid[randomIdx] = "sp";
-    setTimeout(cleanGrid, 1500);
+    setTimeout(updateGrid, 1500);
     renderGrid();
 }
 
@@ -83,7 +83,7 @@ function remainingTime() {
         message = "Game over!";
         if (points >= 500) {
             message = "You saved humanity!";
-        } cleanGrid();
+        } updateGrid();
     }
     render();
 }
